@@ -163,7 +163,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Mistake action detection from egocentric videos is crucial for developing intelligent archives that detect workers' errors and provide feedback. Previous studies have been limited to specific domains, focused on detecting mistakes from videos without procedural texts, and analyzed whether actions are mistakes. To address these limitations, in this paper, we propose the EgoOops dataset, which includes egocentric videos, procedural texts, and three types of annotations: video-text alignment, mistake labels, and descriptions for mistakes. EgoOops covers five procedural domains and includes 50 egocentric videos. The video-text alignment allows the model to detect mistakes based on both videos and procedural texts. The mistake labels and descriptions enable detailed analysis of real-world mistakes. Based on EgoOops, we tackle two tasks: video-text alignment and mistake detection. For video-text alignment, we enhance the recent StepFormer model with an additional loss for fine-tuning. Based on the alignment results, we propose a multi-modal classifier to predict mistake labels. In our experiments, the proposed methods achieve higher performance than the baselines. In addition, our ablation study demonstrates the effectiveness of combining videos and texts. We will release the dataset and codes upon publication.
+              Mistake action detection is crucial for developing intelligent archives that detect workers' errors and provide feedback. Existing studies have focused on visually apparent mistakes in free-style activities, resulting in video-only approaches to mistake detection. However, in text-following activities, models cannot determine the correctness of some actions without referring to the texts. Additionally, current mistake datasets rarely use procedural texts for video recording except for cooking. To fill these gaps, this paper proposes the EgoOops dataset, where egocentric videos record erroneous activities when following procedural texts across diverse domains. It features three types of annotations: video-text alignment, mistake labels, and descriptions for mistakes. We also propose a mistake detection approach, combining video-text alignment and mistake label classification to leverage the texts. Our experimental results show that incorporating procedural texts is essential for mistake detection. Data is available through https://y-haneji.github.io/EgoOops-project-page/.
             </p>
           </div>
         </div>
@@ -212,16 +212,21 @@
     <div class="hero-body">
       <div class="container">
         <!-- Paper video. -->
-        <h2 class="title is-3">Sample video</h2>
-        <!-- <div class="columns is-centered has-text-centered"> -->
-          <!-- <div class="column is-four-fifths"> -->
-            <!-- <div class="publication-video"> -->
+        <h2 class="title is-3">Sample video (color mixture experiments)</h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <div class="publication-video">
               <!-- Youtube embed code here -->
               <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-            <!-- </div> -->
-          <!-- </div> -->
-        <!-- </div> -->
-        <div class="content has-text-centered"><p>Under construction.</p></div>
+              <video src="static/videos/S1800004_use_yellow_liquid_but_should_use_green_liquid.mp4" autoplay controls muted loop height="100%"></video>
+            </div>
+          </div>
+        </div>
+        <div class="content has-text-centered">
+          <p><b>Step</b>: <i>Mix powdered detergent and yellow liquid in a cup.</i></p>
+          <p><b>Mistake label</b>: working with wrong objects</p>
+          <p><b>Mistake description</b>: <i>use green liquid but should use yellow liquid</i></p>
+        </div>
       </div>
     </div>
   </section>
@@ -277,19 +282,15 @@
         <h2 class="title is-3">Statistics</h2>
         <div class="columns is-centered">
           <div class="column">
-            <img src="static/images/tab_rec_stats_task.png" alt="Statistics of recorded videos.">
+            <img src="static/images/tab_rec_text_stats_task.png" alt="Statistics of recorded videos.">
           </div>
-          <div class="column">
-            <img src="static/images/tab_text_stats_task.png" alt="Statistics of procedural texts.">
-          </div>
-        </div>
-        <div class="columns is-centered">
           <div class="column">
             <img src="static/images/tab_mistake_stats_task.png" alt="Comparisons of execution and order mistakes.">
           </div>
           <div class="column">
             <img src="static/images/tab_mistake_action_classes.png" alt="Statistics of mistake action labels.">
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -310,7 +311,7 @@
           <ul>
             <li>[Recommended] <a href="https://github.com/Y-Haneji/EgoOops-annotations/" target="_blank">The GitHub repository</a></li>
             <li><a href="http://www.lsta.media.kyoto-u.ac.jp/resource/data/EgoOops/EgoOops-annotations.zip" target="_blank">Our laboratory's website</a></li>
-          </ul>  
+          </ul>
 	  <p>*The both contents are same but we might update the GitHub version.</p>
         </li>
       </ul>
